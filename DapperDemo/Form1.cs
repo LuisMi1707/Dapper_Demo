@@ -13,7 +13,7 @@ namespace DapperDemo
 {
     public partial class Form1 : Form
     {
-        CustomerRepository CustomerR = new CustomerRepository();
+        CustomerRepository customerR = new CustomerRepository();
 
         public Form1()
         {
@@ -22,8 +22,13 @@ namespace DapperDemo
 
         private void btnObtenerTodo_Click(object sender, EventArgs e)
         {
-            var cliente = CustomerR.ObtenerTodo();
-            dgvObtenerTodo.DataSource = cliente; 
+            var cliente = customerR.ObtenerTodo();
+            dgvCustomers.DataSource = cliente; 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

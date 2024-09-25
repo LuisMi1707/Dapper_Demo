@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvObtenerTodo = new System.Windows.Forms.DataGridView();
+            this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.btnObtenerTodo = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvObtenerTodo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvObtenerTodo
+            // dgvCustomers
             // 
-            this.dgvObtenerTodo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvObtenerTodo.Location = new System.Drawing.Point(12, 12);
-            this.dgvObtenerTodo.Name = "dgvObtenerTodo";
-            this.dgvObtenerTodo.Size = new System.Drawing.Size(776, 306);
-            this.dgvObtenerTodo.TabIndex = 0;
+            this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomers.Location = new System.Drawing.Point(12, 12);
+            this.dgvCustomers.Name = "dgvCustomers";
+            this.dgvCustomers.Size = new System.Drawing.Size(776, 306);
+            this.dgvCustomers.TabIndex = 0;
             // 
             // btnObtenerTodo
             // 
@@ -57,17 +57,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnObtenerTodo);
-            this.Controls.Add(this.dgvObtenerTodo);
+            this.Controls.Add(this.dgvCustomers);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvObtenerTodo)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvObtenerTodo;
+        private System.Windows.Forms.DataGridView dgvCustomers;
         private System.Windows.Forms.Button btnObtenerTodo;
     }
 }
