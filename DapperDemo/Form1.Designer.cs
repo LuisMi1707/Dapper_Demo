@@ -30,6 +30,9 @@
         {
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.btnObtenerTodo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tboxObtenerID = new System.Windows.Forms.TextBox();
+            this.btnObtenerID = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,11 +54,40 @@
             this.btnObtenerTodo.UseVisualStyleBackColor = true;
             this.btnObtenerTodo.Click += new System.EventHandler(this.btnObtenerTodo_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(63, 347);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "ID Cliente";
+            // 
+            // tboxObtenerID
+            // 
+            this.tboxObtenerID.Location = new System.Drawing.Point(117, 344);
+            this.tboxObtenerID.Name = "tboxObtenerID";
+            this.tboxObtenerID.Size = new System.Drawing.Size(100, 20);
+            this.tboxObtenerID.TabIndex = 3;
+            // 
+            // btnObtenerID
+            // 
+            this.btnObtenerID.Location = new System.Drawing.Point(117, 380);
+            this.btnObtenerID.Name = "btnObtenerID";
+            this.btnObtenerID.Size = new System.Drawing.Size(75, 23);
+            this.btnObtenerID.TabIndex = 4;
+            this.btnObtenerID.Text = "Buscar";
+            this.btnObtenerID.UseVisualStyleBackColor = true;
+            this.btnObtenerID.Click += new System.EventHandler(this.btnObtenerID_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnObtenerID);
+            this.Controls.Add(this.tboxObtenerID);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnObtenerTodo);
             this.Controls.Add(this.dgvCustomers);
             this.Name = "Form1";
@@ -63,6 +95,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -70,6 +103,9 @@
 
         private System.Windows.Forms.DataGridView dgvCustomers;
         private System.Windows.Forms.Button btnObtenerTodo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tboxObtenerID;
+        private System.Windows.Forms.Button btnObtenerID;
     }
 }
 
