@@ -82,6 +82,11 @@ namespace DapperDemo
 
             MessageBox.Show($"filas actualizadas {actualizados} , {clienteActualizado.CustomerID}");
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }
