@@ -35,8 +35,28 @@ namespace DapperDemo
         {
             var Cliente = customerR.ObtenerPorID(tboxObtenerID.Text);
             dgvCustomers.DataSource = new List<Customers> { Cliente };
+
+            if (Cliente != null)
+            {
+                RellenarForm(Cliente);
+            }
+        }
+        private void RellenarForm(Customers customers)
+        {
+            txbCustomerID.Text = customers.CustomerID;
+            txbCompanyName.Text = customers.CompanyName;
+            txbContactName.Text = customers.ContactName;
+            txbContactTitle.Text = customers.ContactTitle;
+            txbAddress.Text = customers.Address;
         }
 
+        #region Insertar Cliente
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            var nuevoCliente = CrearCliente();
+            var insertado = customerR.insertarCliente(nuevoCliente);
+            MessageBox.Show($"{insertado} registros insertados");
+        }
         private Customers CrearCliente()
         {
             var nuevo = new Customers
@@ -49,12 +69,18 @@ namespace DapperDemo
             };
             return nuevo;
         }
+        #endregion
 
-        private void btnInsertar_Click(object sender, EventArgs e)
+
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
-            var nuevoCliente = CrearCliente();
-            var insertado = customerR.insertarCliente(nuevoCliente);
-            MessageBox.Show($"{insertado} registros insertados");
+            var clienteActualizado = CrearCliente();
+            var actualizados = customerR.ActualizarCliente(clienteActualizado);
+            var cliente = customerR.ObtenerPorID(clienteActualizado.CustomerID);
+            dgvCustomers.DataSource = new List<Customers> { cliente };
+
+
+            MessageBox.Show($"filas actualizadas {actualizados} , {clienteActualizado.CustomerID}");
         }
     }
     
