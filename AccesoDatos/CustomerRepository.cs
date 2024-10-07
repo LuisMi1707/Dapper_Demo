@@ -11,7 +11,7 @@ namespace AccesoDatos
     {
         public List<Customers> ObtenerTodo()
         {
-            using (var conexion = 
+            using (var conexion =
                 DataBase.GetSqlConnection())
             {
                 String selectAll = "";
@@ -33,7 +33,7 @@ namespace AccesoDatos
 
 
             }
-        
+
         }
 
         public Customers ObtenerPorID(string id)
@@ -62,5 +62,35 @@ namespace AccesoDatos
             }
 
         }
+
+        public int insertarCliente(Customers customer)
+        {
+            using (var conexion = DataBase.GetSqlConnection())
+            {
+                String Insertar = "";
+                Insertar = Insertar + "INSERT INTO [dbo].[Customers] " + "\n";
+                Insertar = Insertar + "           ([CustomerID] " + "\n";
+                Insertar = Insertar + "           ,[CompanyName] " + "\n";
+                Insertar = Insertar + "           ,[ContactName] " + "\n";
+                Insertar = Insertar + "           ,[ContactTitle] " + "\n";
+                Insertar = Insertar + "           ,[Address]) " + "\n";
+                Insertar = Insertar + "     VALUES " + "\n";
+                Insertar = Insertar + "           (@customerID " + "\n";
+                Insertar = Insertar + "           ,@companyName " + "\n";
+                Insertar = Insertar + "           ,@contactName " + "\n";
+                Insertar = Insertar + "           ,@contactTitle " + "\n";
+                Insertar = Insertar + "           ,@address)";
+                var insertadas = conexion.Execute(Insertar, new
+                {
+                    customerID = customer.CustomerID,
+                    CompanyName = customer.CompanyName,
+                    ContactName = customer.ContactName,
+                    ContactTitle = customer.ContactTitle,
+                    Address = customer.Address,
+                });
+                return insertadas;
+            }
+        }
+        
     }
 }
